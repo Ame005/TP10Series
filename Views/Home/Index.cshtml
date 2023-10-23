@@ -1,5 +1,35 @@
-﻿@{
-    ViewData["Title"] = "Index";
-}
+﻿<body>
+  <div id="textoSup">
+    <h1>Bienvenidos a Binker Series</h1>
+    <h5>Las series más vistar por Binker. Es decir las mejores series.</h5>
+  </div>
+  <div class="flex">
+      @foreach(Serie i in ViewBag.Series)
+      {
+        <div class="card" style="width: 18rem;">
+          <img src="@i.ImagenSerie" class="card-img-top" alt="Imagen Serie">
+          <h5 class="card-title">@i.Nombre</h5>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalSerie" onclick="MostrarTemporadas(@i.IdSerie,'@i.Nombre')">Temporadas</button>
+          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalSerie" onclick="MostrarActores(@i.IdSerie,'@i.Nombre')">Actores</button>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalSerie" onclick="MostrarInfo(@i.IdSerie,'@i.Nombre')">Info</button>
+        </div>
+      }
+    </div>
+  <div class="modal fade" id="ModalSerie" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="Titulo"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="Cuerpo">
 
-<h1>TP XX - Index</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
