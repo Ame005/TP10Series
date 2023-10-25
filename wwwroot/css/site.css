@@ -13,6 +13,8 @@ html {
 body {
   margin: 20px 60px 0px 20px;
   text-align: center;
+  font-family: canada-type-gibson,sans-serif;
+  overflow: hidden;
 }
 
 footer {
@@ -21,8 +23,60 @@ footer {
   margin: 10px 0px 20px 0px;
 }
 #textoSup {
-  width: 100%;
+  display: flex;
+  justify-content: center;
   text-align: center;
+  width: 100%;
+  flex-direction: column;
+}
+#textoSup h1 {
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  color: var(--color-primary);
+  animation: estoyAburrida 1.5s ease-in infinite, move 1.2s ease-in infinite;
+  letter-spacing: 0.3rem;
+}
+/*azul: #
+celeste: #
+verde: #*/
+:root {
+  --color-primary: #0dcaf0;
+  --color-secondary: #0187a1;
+  --color-tertiary: #0d6efd;
+  --color-quaternary: #007c6c;
+}
+@keyframes estoyAburrida {
+  0% {
+    text-shadow: none;
+  }
+  17% {
+    text-shadow: 1.5px 1.5px 0 var(--color-secondary);
+  }
+  34% {
+    text-shadow: 1.5px 1.5px 0 var(--color-secondary),
+      3px 3px 0 var(--color-tertiary);
+  }
+  51% {
+    text-shadow: 1.5px 1.5px 0 var(--color-secondary),
+      3px 3px 0 var(--color-tertiary), 4.5px 4.5px var(--color-quaternary);
+  }
+  70% {
+    text-shadow: 1.5px 1.5px 0 var(--color-secondary),
+      3px 3px 0 var(--color-tertiary), 4.5px 4.5px var(--color-quaternary);
+  }
+  80% {
+    text-shadow: 1.5px 1.5px 0 var(--color-secondary),
+      3px 3px 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: 1.5px 1.5px 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
 }
 .flex {
   display: flex;
